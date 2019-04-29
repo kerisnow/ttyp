@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主页面-->
+    <item name="main_frameLayout" type="id" />
+    <item name="main_bottomBar" type="id" />
+    <!--首页-->
+    <item name="home_advertisement_pic" type="id" />
+    <item name="fl_container" type="id" />
+    <item name="goods_type_laout" type="id" />
+    <item name="search_text_back" type="id" />
+    <item name="home_search_search_text" type="id" />
+    <item name="home_search_search_pic" type="id" />
+    <item name="home_search_msg_pic" type="id" />
+    <item name="rl_main" type="id" />
+    <item name="vp_main" type="id" />
+    <item name="ll_main" type="id" />
+    <item name="menu_bar_button1" type="id" />
+    <item name="menu_bar_button2" type="id" />
+    <item name="menu_bar_button3" type="id" />
+    <item name="menu_bar_button4" type="id" />
+    <item name="menu_bar_button5" type="id" />
+    <item name="menu_bar_button6" type="id" />
+    <item name="menu_bar_button7" type="id" />
+    <item name="menu_bar_button8" type="id" />
+    <item name="menu_bar_button9" type="id" />
+    <item name="menu_bar_button10" type="id" />
+    <item name="menu_list_control" type="id" />
+    <item name="menu_list_menu" type="id" />
+    <item name="menu_grid_show" type="id" />
+    <item name="menu_grid_control" type="id" />
+    <item name="menu_grid_close" type="id" />
+    <item name="menu_grid_menu" type="id" />
+    <!--优选-->
+    <item name="youx_search_control" type="id" />
+    <item name="youx_menu_bar_control" type="id" />
+    <item name="youx_advertisement_control" type="id" />
+    <item name="youx_advertisement_pic" type="id" />
+    <item name="youx_brand_list_control" type="id" />
+    <item name="youx_search_search_text" type="id" />
+    <item name="youx_search_search_pic" type="id" />
+    <item name="youx_menu_bar_button1" type="id" />
+    <item name="youx_menu_bar_button2" type="id" />
+    <item name="youx_menu_bar_button3" type="id" />
+    <item name="youx_menu_bar_button4" type="id" />
+    <item name="youx_menu_bar_button5" type="id" />
+    <item name="youx_menu_bar_button6" type="id" />
+    <item name="youx_menu_bar_button7" type="id" />
+    <item name="youx_menu_bar_button8" type="id" />
+    <item name="youx_menu_bar_button9" type="id" />
+    <item name="youx_menu_bar_button10" type="id" />
+    <!--抵现卡-->
+    <item name="dixk_text1" type="id" />
+    <item name="dixk_layout1" type="id" />
+    <item name="dixk_layout1_text1" type="id" />
+    <item name="dixk_layout1_text2" type="id" />
+    <item name="dixk_layout2" type="id" />
+    <item name="dixk_layout2_text1" type="id" />
+    <item name="dixk_layout2_text2" type="id" />
+    <item name="dixk_layout3" type="id" />
+    <item name="dixk_layout3_text1" type="id" />
+    <item name="dixk_layout3_text2" type="id" />
+    <item name="dixk_layout4" type="id" />
+    <item name="dixk_layout4_text1" type="id" />
+    <item name="dixk_layout4_text2" type="id" />
+    <item name="dixk_ad_image" type="id" />
+    <!--抵现卡充值-->
+    <item name="dixk_a_edit1" type="id" />
+    <item name="dixk_a_edit2" type="id" />
+    <item name="dixk_a_layout" type="id" />
+    <item name="dixk_a_text1" type="id" />
+    <item name="dixk_a_text2" type="id" />
+    <!--抵现卡充值记录-->
+    <item name="dixk_b_text1" type="id" />
+    <item name="dixk_b_rl" type="id" />
+    <item name="dixk_b_rl_text" type="id" />
+    <item name="dixk_b_list" type="id" />
+    <!--商品列表页-->
+    <item name="goods_list_listview" type="id" />
+    <!--商品详情页-->
+    <item name="share_earn" type="id" />
+    <item name="goods_detail_image_text" type="id" />
+    <item name="price_discount" type="id" />
+    <item name="price_taob" type="id" />
+    <item name="sales_volume" type="id" />
+    <item name="offset_receive_control" type="id" />
+    <item name="offset_price" type="id" />
+    <item name="offset_date" type="id" />
+    <item name="goods_detail_shop_logo" type="id" />
+    <item name="goods_detail_shopname" type="id" />
+    <item name="goods_detail_shop_address_control" type="id" />
+    <item name="goods_detail_shop_address" type="id" />
+    <item name="goods_detail_score_1" type="id" />
+    <item name="goods_detail_score_2" type="id" />
+    <item name="goods_detail_score_3" type="id" />
+
+    <!-- 登录注册 -->
+    <item name="login_back_image" type="id" />
+    <!-- 普通登录块 -->
+    <item name="login_normal" type="id" />
+    <item name="login_normal_register" type="id" />
+    <item name="login_normal_edit1" type="id" />
+    <item name="login_normal_edit2" type="id" />
+    <item name="login_normal_login" type="id" />
+    <item name="login_normal_fogpassword" type="id" />
+    <item name="login_normal_messagelogin" type="id" />
+    <!-- 短信登录块 -->
+    <item name="login_message" type="id" />
+    <item name="login_message_edit1" type="id" />
+    <item name="login_message_edit2" type="id" />
+    <item name="login_message_register" type="id" />
+    <item name="login_message_login" type="id" />
+    <!-- 忘记密码块 -->
+    <item name="forget_password" type="id" />
+    <item name="forget_password_edit1" type="id" />
+    <item name="forget_password_edit2" type="id" />
+    <item name="forget_password_register" type="id" />
+    <item name="forget_password_edit3" type="id" />
+    <item name="forget_password_edit4" type="id" />
+    <item name="forget_password_login" type="id" />
+    <!-- 注册块 1 -->
+    <item name="registered1" type="id" />
+    <item name="registered1_edit1" type="id" />
+    <item name="registered1_edit2" type="id" />
+    <item name="registered1_register" type="id" />
+    <item name="registered1_text1" type="id" />
+    <item name="registered1_login" type="id" />
+    <!-- 注册块 2 -->
+    <item name="registered2" type="id" />
+    <item name="registered2_edit1" type="id" />
+    <item name="registered2_edit2" type="id" />
+    <item name="registered2_login" type="id" />
+    <!-- 注册块 3 -->
+    <item name="registered3" type="id" />
+    <item name="registered3_edit1" type="id" />
+    <item name="registered3_skip" type="id" />
+    <item name="registered3_login" type="id" />
+    <!--我的-->
+    <item name="me_taob_sq" type="id" />
+    <item name="me_setting" type="id" />
+    <item name="me_message" type="id" />
+    <item name="me_message_num" type="id" />
+    <item name="me_turnto_login" type="id" />
+    <item name="me_have_login" type="id" />
+    <item name="me_user_name" type="id" />
+    <item name="me_user_phone" type="id" />
+    <item name="me_image1" type="id" />
+    <item name="me_text1" type="id" />
+    <item name="me_image2" type="id" />
+    <item name="me_text2" type="id" />
+    <item name="me_userhead" type="id" />
+    <item name="me_share" type="id" />
+    <item name="me_partener_layout1" type="id" />
+    <item name="me_partener_text1" type="id" />
+    <item name="me_partener_text2" type="id" />
+    <item name="me_partener_text3" type="id" />
+    <item name="me_partener_text4" type="id" />
+    <item name="me_partener_row" type="id" />
+    <item name="me_layout1" type="id" />
+    <item name="me_layout2" type="id" />
+    <item name="me_layout3" type="id" />
+    <item name="me_layout4" type="id" />
+    <item name="me_layout5" type="id" />
+    <item name="me_layout6" type="id" />
+    <item name="me_ad_image" type="id" />
+    <item name="me_ad_control" type="id" />
+    <!--设置-->
+    <item name="setting_headimage_layout" type="id" />
+    <item name="setting_headimage" type="id" />
+    <item name="setting_pickname_layout" type="id" />
+    <item name="setting_pickname" type="id" />
+    <item name="setting_phone_layout" type="id" />
+    <item name="setting_phone" type="id" />
+    <item name="setting_password" type="id" />
+    <item name="setting_ali_Layout" type="id" />
+    <item name="setting_searchview_control" type="id" />
+    <item name="setting_search_control" type="id" />
+    <item name="setting_check_update" type="id" />
+    <item name="setting_logout" type="id" />
+    <item name="setting_a_backimage" type="id" />
+    <item name="setting_a_alipay_account_layout" type="id" />
+    <item name="setting_a_alipay_phone" type="id" />
+    <item name="setting_a_alipay_message" type="id" />
+    <item name="setting_a_alipay_getmessage" type="id" />
+    <item name="setting_a_alipay_name" type="id" />
+    <item name="setting_a_alipay_account" type="id" />
+    <item name="setting_a_phone_layout" type="id" />
+    <item name="setting_a_phone" type="id" />
+    <item name="setting_a_phone_message" type="id" />
+    <item name="setting_a_phone_getmessage" type="id" />
+    <item name="setting_a_phone1_layout" type="id" />
+    <item name="setting_a_phone1" type="id" />
+    <item name="setting_a_phone1_message" type="id" />
+    <item name="setting_a_phone1_getmessage" type="id" />
+    <item name="setting_a_password_layout" type="id" />
+    <item name="setting_a_password_phone" type="id" />
+    <item name="setting_a_password_message" type="id" />
+    <item name="setting_a_password_getmessage" type="id" />
+    <item name="setting_a_password_new" type="id" />
+    <item name="setting_a_password_new1" type="id" />
+
+    <item name="assembly_search_search_text" type="id" />
+    <item name="my_view" type="id" />
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white_text">
+    <LinearLayout
+        android:id="@id/menu_list_control"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <com.ttyp.tiantao.assembly.myListView.HorizontalListView
+            android:id="@id/menu_list_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@id/menu_grid_show"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="2dp"
+            android:adjustViewBounds="true"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/to_down" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/menu_grid_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@id/menu_grid_close"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:adjustViewBounds="true"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/to_up" />
+    </LinearLayout>
+
+    <com.volley.library.flowtag.FlowTagLayout
+        android:id="@id/menu_grid_menu"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:visibility="visible" />
+</LinearLayout>

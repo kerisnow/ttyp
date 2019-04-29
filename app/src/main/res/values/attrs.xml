@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MenuButton">
+        <attr name="button_image_visible" format="boolean" />
+        <attr name="button_image_src" format="reference|integer" />
+        <attr name="button_text_visible" format="boolean" />
+        <attr name="button_text" format="string" />
+        <attr name="button_text_color" format="color" />
+        <attr name="button_text_size" format="dimension" />
+        <attr name="button_image_padding_left" format="dimension" />
+        <attr name="button_image_padding_right" format="dimension" />
+        <attr name="button_image_padding_bottom" format="dimension" />
+        <attr name="button_image_padding_top" format="dimension" />
+        <attr name="button_image_padding" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MenuPictureGrid">
+        <attr name="grid_type" format="enum">
+            <enum name="One_r_Four_c" value="1" />
+            <enum name="Two_r_Two_c" value="2" />
+            <enum name="Two_r_Tree_c" value="3" />
+        </attr>
+        <attr name="grid_image1_src" format="reference|integer" />
+        <attr name="grid_image2_src" format="reference|integer" />
+        <attr name="grid_image3_src" format="reference|integer" />
+        <attr name="grid_image4_src" format="reference|integer" />
+    </declare-styleable>
+    <declare-styleable name="GoodsListImageTextView">
+        <attr name="type_logo" format="reference|integer" />
+        <attr name="goods_title_text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="FlowLayout" >
+        <attr name="lineSpacing" format="dimension" />
+    </declare-styleable>
+</resources>

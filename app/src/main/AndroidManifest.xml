@@ -1,21 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mkd.kerisnow.ttmb">
+    package="com.ttyp.tiantao">
 
+    <!-- ****** 权限块 开始 ****** -->
+    <!-- 网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 文件读写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- SDCard数据读写权限 -->
+    <uses-permission android:name="android.permission.PERMISSION_GRANTED"/>
+    <!-- ****** 权限块 结束 ****** -->
+
+    <!-- ****** activity块 开始 ****** -->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ttyp"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ttyp"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:name="com.ttyp.tiantao.ttmb.util.MyApplication"
+        android:theme="@style/NoTitleStyle"
+        >
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.ttyp.tiantao"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.MainActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyThemeA"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.connectweb.ConnectWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyThemeA"
+            android:launchMode="singleInstance"
+            >
+
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.MyDeepLinkActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="singleInstance"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "ttyp://ttyp.ttmb/openapk” -->
+                <data android:scheme="ttyp"
+                    android:host="ttyp.ttmb"
+                    android:pathPrefix="/openapk" />
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.goods.GoodsDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyThemeA"
+            android:launchMode="singleInstance"
+            >
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.goods.GoodsListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="singleInstance"
+            >
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="standard"
+            >
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.me.MeSettingAActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="standard"
+            >
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.me.MeSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="standard"
+            >
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.rechargecard.DiXKRechargeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="singleInstance"
+            >
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.rechargecard.RechargeListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="singleInstance"
+            >
+        </activity>
+
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.tabtools.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="singleInstance"
+            >
+        </activity>
+
     </application>
 
 </manifest>

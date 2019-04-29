@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ttmb</string>
+    <string name="app_name">ttyp</string>
+    <string name="password_rule">密码长度为8-16位\n必须包含数字、字母(不区分大小写)、符合中至少两种元素</string>
 </resources>

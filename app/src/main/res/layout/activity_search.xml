@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_background"
+    android:orientation="vertical">
+    <include layout="@layout/assembly_search_searchtitle" />
+    <ListView
+        android:id="@+id/search_association_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="#00000000"
+        android:dividerHeight="3dp"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        >
+    </ListView>
+</LinearLayout>

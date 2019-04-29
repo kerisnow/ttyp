@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/whtie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/item_dixk_b_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:text="注册红包"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/item_dixk_b_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@id/item_dixk_b_text1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="1dp"
+            android:text="2019-1-18 13:32:13"
+            android:textColor="@color/gray"
+            android:textSize="12sp" />
+
+        <com.jaychan.view.MultipleTextView
+            android:id="@+id/item_dixk_b_mtext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            app:contentText="200"
+            app:contentTextColor="@color/red"
+            app:prefixText="+ "
+            app:prefixTextColor="@color/red"
+            app:suffixText=" 元"
+            app:suffixTextColor="@color/red" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

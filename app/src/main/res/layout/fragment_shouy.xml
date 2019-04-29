@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ttyp.tiantao.assembly.myBar.MyScorllView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pic_grid="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_text"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+            <!--搜索组件-->
+        <include
+            android:id="@+id/home_search_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/assembly_search_home" />
+            <!--轮播图组件-->
+        <include
+            android:id="@+id/home_rotation_control"
+            android:layout_width="match_parent"
+            android:layout_height="148dp"
+            layout="@layout/assembly_rotation_chart_home"
+            />
+            <!--菜单组件-->
+        <include
+            android:id="@+id/home_menu_bar_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            layout="@layout/assembly_menu_bar_home" />
+        <LinearLayout
+            android:id="@+id/home_advertisement_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <!--广告位-->
+            <ImageView
+                android:id="@id/home_advertisement_pic"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whtie"
+                android:src="@drawable/advertisement"
+                />
+        </LinearLayout>
+            <!--好货精选-->
+        <LinearLayout
+            android:id="@id/goods_type_laout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_background"
+            android:orientation="vertical"/>
+            <!--分类组件-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            />
+        <!--<include
+            android:id="@+id/home_menu_classify_control"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            layout="@layout/assembly_menu_classify_bar" />-->
+        <com.ttyp.tiantao.assembly.myListView.HorizontalListView
+            android:id="@id/menu_list_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+            <!--列表组件-->
+        <FrameLayout
+            android:id="@id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </FrameLayout>
+    </LinearLayout>
+</com.ttyp.tiantao.assembly.myBar.MyScorllView>

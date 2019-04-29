@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@id/youx_search_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="搜索组件"
+            android:background=p"@color/whtie"
+            />-->
+        <include layout="@layout/assembly_search_youx" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@id/youx_menu_bar_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="2dp"
+        >
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="菜单组件"
+            android:background="@color/whtie"
+            />-->
+        <include layout="@layout/assembly_menu_bar_youx" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@id/youx_advertisement_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/whtie"
+        >
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="广告位"
+            />-->
+        <ImageView
+            android:id="@id/youx_advertisement_pic"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/advertisement"
+            />
+    </LinearLayout>
+    <ListView
+        android:id="@id/youx_brand_list_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+</LinearLayout>
