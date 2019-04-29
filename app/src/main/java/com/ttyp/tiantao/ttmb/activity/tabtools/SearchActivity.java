@@ -325,15 +325,4 @@ public class SearchActivity extends MyBaseActivity {
 
     }
 
-    @Override
-    public void handlerW2(Bundle bundle) {
-        super.handlerW2(bundle);
-        try{
-            list.clear();
-            list.addAll(list1);
-            searchItemAdapter.notifyDataSetChanged();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 }
