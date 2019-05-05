@@ -72,9 +72,10 @@ public class GoodsListFragment extends MyFragment {
             }
             adapter = new HomeWaterFallAdapter(getActivity(), list, new HomeWaterFallAdapter.OnItemClickListener() {
                 @Override
-                public void onItemClick(int position) {
+                public void onItemClick(long goodsid) {
                     Map<String, String> params = new HashMap<>();
-                    params.put("key", list.get(position).getGoodsId() + "");
+                    params.put("goodsid", goodsid+"");
+                    Log.e("toGoodsDetailActivity",goodsid+"");
                     fragmentResultData.turnToActivity(GoodsDetailActivity.class, params);
                 }
             });
@@ -129,7 +130,7 @@ public class GoodsListFragment extends MyFragment {
                                             JSONArray ja = (JSONArray)result.get("data");
                                             for (int i = 0; i < ja.length(); i++) {
                                                 JSONObject jo = ja.getJSONObject(i);
-                                                int goodsid = jo.getInt("id");
+                                                long goodsid = jo.getLong("numIid");
                                                 String goodsImage = jo.getString("pic");
                                                 String goodsTitle = jo.getString("title");
                                                 String price = jo.getString("price");
@@ -215,7 +216,7 @@ public class GoodsListFragment extends MyFragment {
                             JSONArray ja = (JSONArray)result.get("data");
                             for (int i = 0; i < ja.length(); i++) {
                                 JSONObject jo = ja.getJSONObject(i);
-                                int goodsid = jo.getInt("id");
+                                long goodsid = jo.getLong("numIid");
                                 String goodsImage = jo.getString("pic");
                                 String goodsTitle = jo.getString("title");
                                 String price = jo.getString("price");

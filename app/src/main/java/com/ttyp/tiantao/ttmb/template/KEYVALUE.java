@@ -1,7 +1,9 @@
 package com.ttyp.tiantao.ttmb.template;
 
 public enum KEYVALUE {
-    FANS("粉丝",0),PARTNER("合伙人",1);
+    FANS("粉丝",0),PARTNER("合伙人",1),//身份
+    DEDUCTION("扣除",0),RECHARGE("充值",1),WHOLE("全部记录",-1)//抵现卡消费充值记录类型
+    ;
     private String identification;
     private int identificationKey;
     private KEYVALUE(String identification,int identificationKey){

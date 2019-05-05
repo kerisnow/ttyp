@@ -54,6 +54,7 @@ public class SearchActivity extends MyBaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
         initView();
         initDate();
         setListener();
@@ -171,6 +172,7 @@ public class SearchActivity extends MyBaseActivity {
                                 handler.sendEmptyMessage(2);
                             }
                             params.put("q",search);
+
                             params.put("page",page+"");
                             params.put("size",size+"");
                             Message message = new Message();
@@ -246,7 +248,7 @@ public class SearchActivity extends MyBaseActivity {
                             JSONObject jo = ja.getJSONObject(i);
                             String title = jo.getString("title");
                             String pic = jo.getString("pic");
-                            int numIid = jo.getInt("numIid");
+                            long numIid = jo.getLong("numIid");
                             String price = jo.getString("price");
                             int couponPrice = jo.getInt("couponPrice");
                             int commission = jo.getInt("commission");
@@ -286,7 +288,7 @@ public class SearchActivity extends MyBaseActivity {
                             JSONObject jo = ja.getJSONObject(i);
                             String title = jo.getString("title");
                             String pic = jo.getString("pic");
-                            int numIid = jo.getInt("numIid");
+                            long numIid = jo.getLong("numIid");
                             String price = jo.getString("price");
                             int couponPrice = jo.getInt("couponPrice");
                             int commission = jo.getInt("commission");

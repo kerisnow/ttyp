@@ -63,11 +63,12 @@ public class ViewPageShowAdapter extends PagerAdapter {
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int i = position % imageList.size();
-//                    Toast.makeText(context,"轮播图 点击事件响应弹出，url:" + urlList.get(i) ,Toast.LENGTH_SHORT).show();
-                        Map<String, String> params = new HashMap<>();
-                        params.put("goodsid", urlList.get(i));
-                        fragmentResultData.turnToActivity(GoodsDetailActivity.class, params);
+                        if(urlList!=null) {
+                            int i = position % imageList.size();
+                            Map<String, String> params = new HashMap<>();
+                            params.put("goodsid", urlList.get(i));
+                            fragmentResultData.turnToActivity(GoodsDetailActivity.class, params);
+                        }
                     }
                 });
             }

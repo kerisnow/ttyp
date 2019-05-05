@@ -28,6 +28,7 @@ import com.ttyp.tiantao.ttmb.template.URLValue;
 import com.ttyp.tiantao.ttmb.util.ConnectLinkService;
 import com.ttyp.tiantao.ttmb.util.GetJSON;
 import com.ttyp.tiantao.ttmb.util.MyApplication;
+import com.ttyp.tiantao.ttmb.util.OnMultClickListener;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -124,8 +125,8 @@ public class RecommendFragment  extends MyFragment {
         menuButtons[9] = v.findViewById(R.id.youx_menu_bar_button10);
 
         //广告位
-        advertisement_layout = v.findViewById(R.id.home_advertisement_control);
-        advertisement_pic = v.findViewById(R.id.home_advertisement_pic);
+        advertisement_layout = v.findViewById(R.id.youx_advertisement_control);
+        advertisement_pic = v.findViewById(R.id.youx_advertisement_pic);
 
         //品牌列表
         brand_listview = v.findViewById(R.id.youx_brand_list_control);
@@ -237,7 +238,7 @@ public class RecommendFragment  extends MyFragment {
             recommendListEntries.clear();
             recommendListEntries.addAll(recommendListEntries1);
             //品牌列表事件绑定
-            brandList1Adapter = new YouxBrandList1Adapter(MyApplication.getContext(), R.layout.item_grid_list, recommendListEntries, new YouxBrandList1Adapter.OnclickerRun() {
+            brandList1Adapter = new YouxBrandList1Adapter(MyApplication.getContext(), R.layout.item_grid_list_1, recommendListEntries, new YouxBrandList1Adapter.OnclickerRun() {
                 @Override
                 public void goodsOnclick(String id, int index) {
                     Toast.makeText(MyApplication.getContext(), "商品跳转弹出，商品id:" + id, Toast.LENGTH_SHORT).show();
@@ -260,9 +261,9 @@ public class RecommendFragment  extends MyFragment {
     }
 
     //点击事件监听
-    private View.OnClickListener clickListener = new View.OnClickListener() {
+    private View.OnClickListener clickListener = new OnMultClickListener() {
         @Override
-        public void onClick(View v) {
+        public void onMultiClick(View v) {
             try {
                 switch (v.getId()) {
                     case R.id.youx_search_search_pic:
@@ -307,6 +308,7 @@ public class RecommendFragment  extends MyFragment {
             }
         }
     };
+
 
     //软键盘输入事件监听
     private View.OnKeyListener keyListener = new View.OnKeyListener() {

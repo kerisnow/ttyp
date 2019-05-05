@@ -24,6 +24,8 @@ import com.ttyp.tiantao.ttmb.util.CountDownTimersUtils;
 import com.ttyp.tiantao.ttmb.util.GetJSON;
 import com.ttyp.tiantao.ttmb.util.OnMultClickListener;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -1006,9 +1008,13 @@ public class LoginActivity extends MyBaseActivity {
                                 flag = BaseUtil.newFile(path, FinalValue.LOCAL_FILE_NAME);
                             } else if ("".equals(fileString)) {
                                 flag = true;
+                            }else {
+                                flag = true;
                             }
                             if (flag) {
-                                BaseUtil.writeFile(LoginActivity.this, FinalValue.LOCAL_FILE_NAME, result.get("data").toString());
+                                JSONObject jo = (JSONObject)result.get("data");
+                                jo.put("uid",StaticValue.UID);
+                                BaseUtil.writeFile(LoginActivity.this, FinalValue.LOCAL_FILE_NAME, jo.toString());
                             }
 
                         }

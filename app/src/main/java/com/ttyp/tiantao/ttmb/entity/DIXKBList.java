@@ -2,28 +2,21 @@ package com.ttyp.tiantao.ttmb.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class DIXKBList implements Serializable {
-    private int id;
+//    private int id;
     private String typeName;
-    private String createTime;
+    private Date createTime;
     private String pice;
 
-    public DIXKBList(int id, String typeName, String createTime, String pice) {
-        this.id = id;
+    public DIXKBList( String typeName, Date createTime, String pice) {
+//        this.id = id;
         this.typeName = typeName;
         this.createTime = createTime;
         this.pice = pice;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public DIXKBList setId(int id) {
-        this.id = id;
-        return this;
-    }
 
     public String getTypeName() {
         return typeName;
@@ -34,11 +27,11 @@ public class DIXKBList implements Serializable {
         return this;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public DIXKBList setCreateTime(String createTime) {
+    public DIXKBList setCreateTime(Date createTime) {
         this.createTime = createTime;
         return this;
     }

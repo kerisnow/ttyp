@@ -69,7 +69,8 @@ public class GoodsListAdapter extends BaseAdapter {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        Glide.with(context).load(model.getGoodsImage()).into(viewHolder.goodsImage);
+
+        Glide.with(context).asBitmap().load(model.getGoodsImage()).into(viewHolder.goodsImage);
         viewHolder.goodstitle.setText(model.getGoodsTitle());
         viewHolder.distribution.setVisibility((model.getIsGoodsoffset()||model.getIsGoodsearn()) ? View.VISIBLE:View.INVISIBLE);
         viewHolder.offset.setText(model.getGoodsoffset() + "元");

@@ -40,19 +40,16 @@
                 </LinearLayout>
                 <com.jaychan.view.MultipleTextView
                     android:id="@id/share_earn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/ril_right"
                     android:layout_gravity="bottom|right"
                     android:layout_marginBottom="20dp"
                     itext:prefixText="分享赚：￥"
-                    itext:contentText="19.99"
+                    itext:contentText="0.00"
                     android:textSize="10sp"
                     android:textColor="@color/white_text"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"
+                    android:gravity="center"
                     />
             </FrameLayout>
             <TextView
@@ -70,14 +67,12 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center_vertical"
                 >
-                <com.jaychan.view.MultipleTextView
+                <TextView
                     android:id="@id/price_discount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    itext:prefixText="抵用价：￥"
-                    itext:prefixTextColor="@color/red"
-                    itext:contentText="299"
-                    itext:contentTextColor="@color/red"
+                    android:text="抵用价：￥0.00"
+                    android:textColor="@color/red"
                     android:textSize="15sp"
                     />
                 <com.jaychan.view.MultipleTextView
@@ -87,7 +82,7 @@
                     itext:prefixText="淘宝价：￥"
                     itext:prefixTextColor="@color/gray"
                     itext:contentTextColor="@color/gray"
-                    itext:contentText="519.99"
+                    itext:contentText="0.00"
                     android:layout_marginLeft="5dp"
                     android:textSize="12sp"
                     />
@@ -103,7 +98,7 @@
                     android:textSize="12sp"
                     itext:prefixText="月销："
                     itext:prefixTextColor="@color/gray"
-                    itext:contentText="2991566521"
+                    itext:contentText="0"
                     itext:contentTextColor="@color/gray"
                     itext:suffixText="笔"
                     itext:suffixTextColor="@color/gray"
@@ -141,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="40sp"
                     android:textColor="@color/whtie"
-                    android:text="160"
+                    android:text="0"
                     android:layout_gravity="center"
                     />
                 <TextView
@@ -153,7 +148,7 @@
                     android:text="有效期2019-3-26至2019-5-26"
                     android:layout_gravity="bottom|center_horizontal"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     />
             </FrameLayout>
             <LinearLayout
@@ -164,6 +159,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/detail_shop_back"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 >
                 <ImageView
                     android:id="@id/goods_detail_shop_logo"
@@ -204,6 +200,7 @@
                         android:layout_column="2"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
+                        android:visibility="gone"
                         >
                         <ImageView
                             android:layout_width="10dp"
@@ -232,7 +229,7 @@
                         itext:prefixText="宝贝描述："
                         itext:prefixTextColor="@color/gray_1"
                         itext:contentTextColor="@color/red"
-                        itext:contentText="4.9"
+                        itext:contentText="0.0"
                         android:layout_columnWeight="1"
                         android:textSize="13sp"
                         android:layout_rowWeight="1"
@@ -246,7 +243,7 @@
                         itext:prefixText="卖家服务："
                         itext:prefixTextColor="@color/gray_1"
                         itext:contentTextColor="@color/red"
-                        itext:contentText="4.9"
+                        itext:contentText="0.0"
                         android:layout_columnWeight="1"
                         android:layout_gravity="center"
                         android:textSize="13sp"
@@ -260,7 +257,7 @@
                         itext:prefixText="物流服务："
                         itext:prefixTextColor="@color/gray_1"
                         itext:contentTextColor="@color/red"
-                        itext:contentText="4.9"
+                        itext:contentText="0.0"
                         android:layout_columnWeight="1"
                         android:layout_gravity="center"
                         android:textSize="13sp"
@@ -308,7 +305,7 @@
                     android:src="@drawable/lotus"
                     />
             </LinearLayout>
-            <GridView
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/more_goods_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -330,7 +327,8 @@
         itext:layout_constraintBottom_toBottomOf="parent"
         >
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/goods_detail_recharge"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
@@ -338,39 +336,55 @@
             android:minWidth="50dp"
             android:clickable="true"
             android:layout_marginRight="1dp"
+            android:orientation="vertical"
             >
-            <com.ttyp.tiantao.assembly.myButton.MenuButton
-                android:layout_width="50dp"
+            <ImageView
+                android:layout_width="34dp"
                 android:layout_height="wrap_content"
-                itext:button_image_src="@drawable/detail_recharge"
-                itext:button_text="立即充值"
-                itext:button_text_size="12sp"
-                itext:button_image_padding_left="7dp"
-                itext:button_image_padding_right="7dp"
-                itext:button_image_padding_bottom="1dp"
+                android:src="@drawable/detail_recharge"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="3dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="立即充值"
+                android:layout_marginTop="3dp"
                 />
         </LinearLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/goods_detail_share"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
             android:background="@color/whtie"
             android:minWidth="50dp"
             android:clickable="true"
+            android:orientation="vertical"
             >
-            <com.ttyp.tiantao.assembly.myButton.MenuButton
-                android:layout_width="42dp"
+            <ImageView
+                android:layout_width="29dp"
                 android:layout_height="wrap_content"
-                itext:button_image_src="@drawable/share_gray"
-                itext:button_text="分享"
-                itext:button_text_size="12sp"
-                itext:button_image_padding_left="7dp"
-                itext:button_image_padding_right="7dp"
-                itext:button_image_padding_bottom="1dp"
+                android:src="@drawable/share_gray"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="3dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="分 享"
+                android:layout_marginTop="3dp"
                 />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/goods_detail_buyprice"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:clickable="true"
@@ -378,7 +392,7 @@
             android:gravity="center"
             android:background="@drawable/detail_back_orange"
             android:minWidth="80sp"
-            android:layout_weight="2"
+            android:layout_weight="6"
             >
             <com.jaychan.view.MultipleTextView
                 android:layout_width="wrap_content"
@@ -398,6 +412,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/goods_detail_buycounpon"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:clickable="true"
@@ -405,7 +420,7 @@
             android:gravity="center"
             android:background="@drawable/detail_back_red"
             android:minWidth="80sp"
-            android:layout_weight="2"
+            android:layout_weight="6"
             >
             <com.jaychan.view.MultipleTextView
                 android:layout_width="wrap_content"

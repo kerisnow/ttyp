@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.ttyp.tiantao.R;
 import com.ttyp.tiantao.assembly.myTextView.OldPricTextView;
 import com.ttyp.tiantao.ttmb.entity.GoodsListItem;
-import com.ttyp.tiantao.ttmb.util.OnMultClickListener;
 
 import java.util.List;
 
@@ -22,14 +21,6 @@ public class HomeWaterFallAdapter extends RecyclerView.Adapter {
     private Context mContext;
     private List<GoodsListItem> mData; //定义数据源
     private OnItemClickListener mItemClickListener;
-    private View.OnClickListener onClickListener = new OnMultClickListener() {
-        @Override
-        public void onMultiClick(View v) {
-            if (mItemClickListener!=null){
-                mItemClickListener.onItemClick((Integer) v.getTag());
-            }
-        }
-    };
 
     //定义构造方法，默认传入上下文和数据源
     public HomeWaterFallAdapter(Context context, List<GoodsListItem> data,OnItemClickListener listener) {
@@ -42,12 +33,11 @@ public class HomeWaterFallAdapter extends RecyclerView.Adapter {
     public MyViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_fllayout, null);
         final MyViewHolder viewHolder = new MyViewHolder(view);
-        view.setOnClickListener(onClickListener);
         return viewHolder;
     }
 
     @Override  //将数据源的数据绑定到相应控件上
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         MyViewHolder holder2 = (MyViewHolder) holder;
         GoodsListItem goodsListItem = mData.get(position);
         Glide.with(mContext).asBitmap().load(goodsListItem.getGoodsImage()).into(holder2.goodsImage);
@@ -59,7 +49,14 @@ public class HomeWaterFallAdapter extends RecyclerView.Adapter {
         holder2.shopsImage.setText(goodsListItem.getGoodsTitle());
         holder2.shopname.setText(goodsListItem.getShopname());
         holder2.shopadress.setText(goodsListItem.getShopaddress());
-        holder2.itemView.setTag(position);
+        if (mItemClickListener!=null) {
+            holder2.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mItemClickListener.onItemClick(mData.get(position).getGoodsId());
+                }
+            });
+        }
 
     }
 
@@ -111,7 +108,7 @@ public class HomeWaterFallAdapter extends RecyclerView.Adapter {
     }
 
     public interface OnItemClickListener{
-        void onItemClick(int position);
+        void onItemClick(long position);
     }
 }
 

@@ -118,7 +118,12 @@ public class MeSettingActivity extends MyBaseAActivity implements EasyPermission
             phone.setText("请登录");
         }else {
             aBoolean = true;
-            Glide.with(MeSettingActivity.this).load(userEntity.getHeadimage()).into(headimage);
+            if(userEntity.getHeadimage()!=null) {
+                headimage.setVisibility(View.VISIBLE);
+                Glide.with(MeSettingActivity.this).load(userEntity.getHeadimage()).into(headimage);
+            }else {
+                headimage.setVisibility(View.GONE);
+            }
             pickname.setText(userEntity.getPickName());
             phone.setText(userEntity.getPhone());
         }
@@ -214,14 +219,14 @@ public class MeSettingActivity extends MyBaseAActivity implements EasyPermission
                                                     handler.sendMessage(message);
                                                     return;
                                                 }
-                                                String res = (String) result.get("res");
+                                                int res = (int) result.get("res");
                                                 String msg = (String) result.get("msg");
-                                                if (res.equals("0")) {
+                                                if (res==0) {
                                                     message.what = 0;
                                                     b.putString("msg", msg);
                                                     message.setData(b);
                                                     handler.sendMessage(message);
-                                                } else if (res.equals("1")) {
+                                                } else if (res==1) {
                                                     message.what = 1;
                                                     b.putString("key", "updatePickName");
                                                     b.putString("data", (String) result.get("data"));
@@ -241,7 +246,7 @@ public class MeSettingActivity extends MyBaseAActivity implements EasyPermission
                             public void onNoClick() {
                                 myDialog1.dismiss();
                             }
-                        });
+                        }).show();
                         break;
                     case R.id.setting_phone_layout:
                         params = new HashMap<>();
@@ -276,7 +281,7 @@ public class MeSettingActivity extends MyBaseAActivity implements EasyPermission
                             public void onNoClick() {
                                 myDialog2.dismiss();
                             }
-                        });
+                        }).show();
                         break;
                 }
             }
@@ -461,14 +466,14 @@ public class MeSettingActivity extends MyBaseAActivity implements EasyPermission
                     handler.sendMessage(message);
                     return;
                 }
-                String res = (String) result.get("res");
+                int res = (int) result.get("res");
                 String msg = (String) result.get("msg");
-                if (res.equals("0")) {
+                if (res==0) {
                     message.what = 0;
                     b.putString("msg", msg);
                     message.setData(b);
                     handler.sendMessage(message);
-                } else if (res.equals("1")) {
+                } else if (res==1) {
                     message.what = 1;
                     b.putString("key", "checkUpdate");
                     b.putString("data", (String) result.get("data"));
@@ -514,7 +519,7 @@ public class MeSettingActivity extends MyBaseAActivity implements EasyPermission
                         public void onNoClick() {
                             myDialog2.dismiss();
                         }
-                    });
+                    }).show();
                 }else {
                     toastLongShow("已是最新版本");
                 }

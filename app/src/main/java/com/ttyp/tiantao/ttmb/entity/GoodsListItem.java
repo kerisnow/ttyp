@@ -3,7 +3,7 @@ package com.ttyp.tiantao.ttmb.entity;
 import java.io.Serializable;
 
 public class GoodsListItem implements Serializable {
-    int GoodsId;
+    long GoodsId;
     String goodsImage;
     String goodsTitle;
     String goodsTitleLogo;
@@ -28,15 +28,15 @@ public class GoodsListItem implements Serializable {
         return this;
     }
 
-    public GoodsListItem(int goodsId) {
+    public GoodsListItem(long goodsId) {
         GoodsId = goodsId;
     }
 
-    public int getGoodsId() {
+    public long getGoodsId() {
         return GoodsId;
     }
 
-    public GoodsListItem setGoodsId(int goodsId) {
+    public GoodsListItem setGoodsId(long goodsId) {
         GoodsId = goodsId;
         return this;
     }

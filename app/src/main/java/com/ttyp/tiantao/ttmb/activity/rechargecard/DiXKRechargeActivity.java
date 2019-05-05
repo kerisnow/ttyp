@@ -22,6 +22,7 @@ import java.util.Map;
 public class DiXKRechargeActivity extends MyBaseActivity {
 
     ImageView backImage;
+    TextView title_text;
 
     EditText editText1;
     EditText editText2;
@@ -43,6 +44,7 @@ public class DiXKRechargeActivity extends MyBaseActivity {
 
     private void initView() {
         backImage = findViewById(R.id.but_a_backimage);
+        title_text = findViewById(R.id.title_text);
         editText1 = findViewById(R.id.dixk_a_edit1);
         editText2 = findViewById(R.id.dixk_a_edit2);
         layout = findViewById(R.id.dixk_a_layout);
@@ -52,6 +54,7 @@ public class DiXKRechargeActivity extends MyBaseActivity {
 
     private void setListener() {
         try{
+            title_text.setText("抵现卡充值");
             backImage.setOnClickListener(listener);
             layout.setOnClickListener(listener);
             textView1.setOnClickListener(listener);
@@ -78,6 +81,7 @@ public class DiXKRechargeActivity extends MyBaseActivity {
                     break;
                 case R.id.dixk_a_text2:
                     //跳转消费记录
+                    turnToActivity(ConsumeListActivity.class,new HashMap<String, String>());
                     break;
             }
         }

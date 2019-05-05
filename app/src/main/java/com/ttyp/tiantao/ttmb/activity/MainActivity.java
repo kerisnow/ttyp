@@ -46,6 +46,7 @@ public class MainActivity extends MyBaseActivity {
             StaticValue.USER = null;
         }else {
             Map<String, Object> userData = GetJSON.getInstance().getJSON(fileString);
+            StaticValue.UID = (String)userData.get("uid");
             StaticValue.USER = new UserEntity(StaticValue.UID);
             StaticValue.USER.setPhone((String) userData.get("phone"));
             String name = (String) userData.get("nickname");

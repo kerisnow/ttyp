@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:text="头像"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text="昵称"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -87,7 +87,7 @@
                 android:id="@id/setting_pickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="@color/gray_1"
                 android:text="用户188888888"
                 />
@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:text="绑定手机号"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -136,7 +136,7 @@
                 android:id="@id/setting_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="@color/gray_1"
                 android:text="188888888"
                 />
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:text="修改密码"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -214,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:text="支付宝账号"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -255,7 +255,7 @@
                 android:layout_height="wrap_content"
                 android:text="关键字弹窗搜索"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -293,7 +293,7 @@
                 android:layout_height="wrap_content"
                 android:text="检查更新"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView
@@ -334,7 +334,7 @@
                 android:layout_height="wrap_content"
                 android:text="退出当前账号"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
             <TextView

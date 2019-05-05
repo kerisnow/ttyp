@@ -12,7 +12,9 @@ import com.jaychan.view.MultipleTextView;
 import com.ttyp.tiantao.R;
 import com.ttyp.tiantao.ttmb.entity.DIXKBList;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DixkBListAdapter extends BaseAdapter {
@@ -59,7 +61,9 @@ public class DixkBListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder)view.getTag();
         }
         viewHolder.textView1.setText(model.getTypeName());
-        viewHolder.textView2.setText(model.getCreateTime());
+        Date date = model.getCreateTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        viewHolder.textView2.setText(sdf.format(date));
         viewHolder.multipleTextView.setContentText(model.getPice());
 
         return view;

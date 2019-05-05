@@ -79,7 +79,9 @@ public class YouxBrandList1Adapter extends BaseAdapter {
             view = convertView;
             viewHolder = (ViewHolder)view.getTag();
         }
-        viewHolder.title_text.setText(model.getFavorites_title());
+        if(model.getFavorites_title()!=null) {
+            viewHolder.title_text.setText(model.getFavorites_title());
+        }
         viewHolder.more_text.setText("更多商品 >");
         if(model.getRecommendList().size() == 3) {
             viewHolder.goods_1_text.setText(model.getRecommendList().get(0).getTitle());

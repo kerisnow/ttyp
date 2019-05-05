@@ -19,6 +19,7 @@ public class URLValue {
     public static final String RECOMMEND_DATA ="/api.php/Commodity/Optimization";
     //抵现卡页
     public static final String RECHARGECARD_RECHARGE ="/api.php/Task/index";
+    public static final String RECHARGECARD_RECHARGE_LIST ="/api.php/Record";
     //我的
     public static final String ME_MESSAGE ="/api.php/";
     public static final String ME_PARTENER ="/api.php/";
@@ -27,6 +28,7 @@ public class URLValue {
     public static final String RECOMMEND_MORE="/api.php/Commodity/OptList";
     //商品详情页
     public static final String GOODS_DETAIL_DATA="/api.php/Commodity/ajaxDetails";
+    public static final String GOODS_DETAIL_GETCOUPON="/api.php/goods/getCoupon";
     //设置
     public static final String SETTING_SETPICKNAME="/api.php/";
     public static final String SETTING_CHECKUPDATE="/api.php/";
