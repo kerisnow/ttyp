@@ -71,14 +71,14 @@
         <activity android:name="com.ttyp.tiantao.ttmb.activity.goods.GoodsDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyThemeA"
-            android:launchMode="singleInstance"
+            android:launchMode="standard"
             >
         </activity>
 
         <activity android:name="com.ttyp.tiantao.ttmb.activity.goods.GoodsListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyTheme"
-            android:launchMode="singleInstance"
+            android:launchMode="standard"
             >
         </activity>
 
@@ -106,21 +106,27 @@
         <activity android:name="com.ttyp.tiantao.ttmb.activity.rechargecard.DiXKRechargeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyTheme"
-            android:launchMode="singleInstance"
+            android:launchMode="standard"
             >
         </activity>
 
         <activity android:name="com.ttyp.tiantao.ttmb.activity.rechargecard.RechargeListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyTheme"
-            android:launchMode="singleInstance"
+            android:launchMode="standard"
+            >
+        </activity>
+        <activity android:name="com.ttyp.tiantao.ttmb.activity.rechargecard.ConsumeListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme"
+            android:launchMode="standard"
             >
         </activity>
 
         <activity android:name="com.ttyp.tiantao.ttmb.activity.tabtools.SearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyTheme"
-            android:launchMode="singleInstance"
+            android:launchMode="standard"
             >
         </activity>
 

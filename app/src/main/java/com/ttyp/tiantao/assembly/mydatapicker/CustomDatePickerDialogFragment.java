@@ -1,6 +1,7 @@
 package com.ttyp.tiantao.assembly.mydatapicker;
 
 import android.app.Dialog;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,12 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.DatePicker;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ttyp.tiantao.R;
 
+import java.lang.reflect.Field;
 import java.util.Calendar;
 
 public class CustomDatePickerDialogFragment extends DialogFragment implements DatePicker.OnDateChangedListener, View.OnClickListener{
@@ -58,13 +59,13 @@ public class CustomDatePickerDialogFragment extends DialogFragment implements Da
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         int style;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             style = R.style.ZZBDatePickerDialogLStyle;
-        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            style = R.style.ZZBDatePickerDialogLStyle;
-        } else {
-            style = getTheme();
-        }
+//        } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            style = R.style.ZZBDatePickerDialogLStyle;
+//        } else {
+//            style = getTheme();
+//        }
         return new Dialog(getActivity(), style);
     }
 
@@ -78,34 +79,35 @@ public class CustomDatePickerDialogFragment extends DialogFragment implements Da
             ensureButton = view.findViewById(R.id.ensure);
             ensureButton.setOnClickListener(this);
             splitLineV = view.findViewById(R.id.splitLineV);
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+//            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                 //bug1:日历模式，在5.0以下设置的可选时间区间如果与当前日期在同一栏会crash，所以只能用滚轮模式
                 datePicker.setCalendarViewShown(false);
                 datePicker.setSpinnersShown(true);
                 //滚轮模式必须使用确定菜单
                 ensureButton.setVisibility(View.VISIBLE);
                 splitLineV.setVisibility(View.VISIBLE);
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
-                    && Build.VERSION.SDK_INT < Build.VERSION_CODES.M){
-                //bug2:LOLLIPOP上OnDateChangedListener回调无效(5.0存在，5.1修复),必须使用确定菜单回传选定日期
-                ensureButton.setVisibility(View.VISIBLE);
-                splitLineV.setVisibility(View.VISIBLE);
-                //如果只要日历部分，隐藏header
-                ViewGroup mContainer = (ViewGroup) datePicker.getChildAt(0);
-                View header = mContainer.getChildAt(0);
-                header.setVisibility(View.GONE);
-            } else {
-                //bug4:LOLLIPOP和Marshmallow上，使用spinner模式，然后隐藏滚轮，显示日历(spinner模式下的日历没有头部)，日历最底部一排日期被截去部分。所以只能使用calender模式，然后手动隐藏header（系统没有提供隐藏header的api）。
-                //如果只要日历部分，隐藏header
-                ViewGroup mContainer = (ViewGroup) datePicker.getChildAt(0);
-                View header = mContainer.getChildAt(0);
-                header.setVisibility(View.GONE);
-                //Marshmallow上底部留白太多，减小间距
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) datePicker.getLayoutParams();
-                layoutParams.bottomMargin = 10;
-                datePicker.setLayoutParams(layoutParams);
-            }
+//            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+//                    && Build.VERSION.SDK_INT < Build.VERSION_CODES.M){
+//                //bug2:LOLLIPOP上OnDateChangedListener回调无效(5.0存在，5.1修复),必须使用确定菜单回传选定日期
+//                ensureButton.setVisibility(View.VISIBLE);
+//                splitLineV.setVisibility(View.VISIBLE);
+//                //如果只要日历部分，隐藏header
+//                ViewGroup mContainer = (ViewGroup) datePicker.getChildAt(0);
+//                View header = mContainer.getChildAt(0);
+//                header.setVisibility(View.GONE);
+//            } else {
+//                //bug4:LOLLIPOP和Marshmallow上，使用spinner模式，然后隐藏滚轮，显示日历(spinner模式下的日历没有头部)，日历最底部一排日期被截去部分。所以只能使用calender模式，然后手动隐藏header（系统没有提供隐藏header的api）。
+//                //如果只要日历部分，隐藏header
+//                ViewGroup mContainer = (ViewGroup) datePicker.getChildAt(0);
+//                View header = mContainer.getChildAt(0);
+//                header.setVisibility(View.GONE);
+//                //Marshmallow上底部留白太多，减小间距
+//                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) datePicker.getLayoutParams();
+//                layoutParams.bottomMargin = 10;
+//                datePicker.setLayoutParams(layoutParams);
+//            }
             initDatePicker();
+            hideDay(datePicker);
         }
     }
 
@@ -183,16 +185,49 @@ public class CustomDatePickerDialogFragment extends DialogFragment implements Da
 
     @Override
     public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
-                && Build.VERSION.SDK_INT < Build.VERSION_CODES.M){ //LOLLIPOP上，这个回调无效，排除将来可能的干扰
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+//                && Build.VERSION.SDK_INT < Build.VERSION_CODES.M){ //LOLLIPOP上，这个回调无效，排除将来可能的干扰
+//            return;
+//        }
+//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) { //5.0以下，必须采用滚轮模式，所以需借助确定菜单回传选定值
             return;
+//        }
+//        if (onSelectedDateListener != null) {
+//            onSelectedDateListener.onSelectedDate(year, monthOfYear, dayOfMonth);
+//        }
+//        dismiss();
+    }
+
+    private void hideDay(DatePicker mDatePicker) {
+        try {
+            /* 处理android5.0以上的特殊情况 */
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int daySpinnerId = Resources.getSystem().getIdentifier("day", "id", "android");
+                if (daySpinnerId != 0) {
+                    View daySpinner = mDatePicker.findViewById(daySpinnerId);
+                    if (daySpinner != null) {
+                        daySpinner.setVisibility(View.GONE);
+                    }
+                }
+            } else {
+                Field[] datePickerfFields = mDatePicker.getClass().getDeclaredFields();
+                for (Field datePickerField : datePickerfFields) {
+                    if ("mDaySpinner".equals(datePickerField.getName()) || ("mDayPicker").equals(datePickerField.getName())) {
+                        datePickerField.setAccessible(true);
+                        Object dayPicker = new Object();
+                        try {
+                            dayPicker = datePickerField.get(mDatePicker);
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        } catch (IllegalArgumentException e) {
+                            e.printStackTrace();
+                        }
+                        ((View) dayPicker).setVisibility(View.GONE);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) { //5.0以下，必须采用滚轮模式，所以需借助确定菜单回传选定值
-            return;
-        }
-        if (onSelectedDateListener != null) {
-            onSelectedDateListener.onSelectedDate(year, monthOfYear, dayOfMonth);
-        }
-        dismiss();
     }
 }
